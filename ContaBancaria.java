@@ -1,0 +1,36 @@
+package Encapsulamento;
+
+public class ContaBancaria {
+	
+	//Atributo privado
+		private double saldo;
+		
+	//Construtor paar inicializar o saldo
+		public ContaBancaria(double saldoInicial) {
+			if (saldoInicial >= 0) {
+				this.saldo = saldoInicial;
+			}else {
+				this.saldo = 0;
+			}
+		}
+		//gatter para o saldo
+		public double getSaldo() {
+			return saldo;
+		}
+		//Método para depositar dinheiro (só aceita valores positivos)
+		public void depositar(double valor) {
+			if (valor > 0) {
+			}else {
+				System.out.println("Valor de depósito inválido");
+			}
+		}
+		//Método para sacar dinheiro (não pode sacar mais do que o saldo)
+				public void sacar(double valor) {
+					if (valor > 0 && valor <= saldo) {
+						saldo-= valor;
+					}else {
+						System.out.println("Saldo inválido! Verifique o valor");
+					}
+				}
+				
+}
